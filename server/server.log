@@ -1,0 +1,5 @@
+(node:17716) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+✓ Server is running on http://localhost:3000
+✓ Health check: http://localhost:3000/health
+✓ API endpoints: http://localhost:3000/api/
