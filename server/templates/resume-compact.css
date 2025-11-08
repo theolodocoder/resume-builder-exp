@@ -1,0 +1,356 @@
+/* Compact Executive Resume Template - MODERN TIMELINE DESIGN */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Main Container --- */
+.resume-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 10pt;
+}
+
+/* --- Header Section --- */
+.header-section {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px solid #d1d5db;
+}
+
+.name-title {
+  margin-bottom: 6px;
+}
+
+.full-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 22pt;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  font-size: 9.5pt;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.contact-item {
+  display: inline;
+  font-size: 9.5pt;
+  color: #4b5563;
+}
+
+.contact-item a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.contact-item a:visited {
+  color: #2563eb;
+}
+
+.separator {
+  margin: 0 4px;
+  color: #9ca3af;
+}
+
+/* --- Resume Sections --- */
+.resume-section {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.section-wrapper {
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+/* --- Timeline Markers --- */
+.timeline-marker {
+  flex-shrink: 0;
+  width: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #9ca3af;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.vertical-line {
+  width: 1px;
+  background-color: #d1d5db;
+  flex: 1;
+  margin-top: 4px;
+}
+
+/* --- Section Content --- */
+.section-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.section-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 8px 0;
+  padding: 0;
+  line-height: 1.3;
+  color: #111827;
+}
+
+.summary-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.55;
+  color: #4b5563;
+  margin: 0;
+  padding: 0;
+  word-spacing: 0.02em;
+}
+
+/* --- Section Items --- */
+.section-item {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  page-break-inside: avoid;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 1px;
+  flex-wrap: wrap;
+}
+
+.item-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+.item-title-link {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-thickness: 0.75px;
+  text-underline-offset: 2px;
+}
+
+.item-company {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #4b5563;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+.item-date {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9pt;
+  font-weight: 500;
+  color: #6b7280;
+  white-space: nowrap;
+  margin: 0 0 3px 0;
+  line-height: 1.35;
+}
+
+.item-position {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9pt;
+  font-style: italic;
+  color: #4b5563;
+  margin: 2px 0 3px 0;
+  padding: 0;
+  line-height: 1.35;
+}
+
+/* --- Description Lists --- */
+.item-description {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  list-style-type: disc;
+  list-style-position: outside;
+  margin: 5px 0 0 0;
+  padding: 0 0 0 18px;
+}
+
+.item-description li {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.5pt;
+  font-weight: 400;
+  color: #374151;
+  margin-bottom: 3px;
+  line-height: 1.4;
+  padding-left: 0;
+  display: list-item;
+}
+
+/* --- Metadata --- */
+.item-meta {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin: 3px 0 0 0;
+  padding: 0;
+  line-height: 1.35;
+}
+
+.item-meta a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.item-meta a:visited {
+  color: #2563eb;
+}
+
+/* --- Skills Grid --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px 14px;
+  margin: 6px 0 0 0;
+}
+
+.skill-item {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.5pt;
+  color: #374151;
+  line-height: 1.5;
+  padding-bottom: 2px;
+}
+
+/* --- Print Styles --- */
+@page {
+  size: A4;
+  margin: 0.5in 0.6in;
+}
+
+@media print {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html, body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  .section-item {
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+}
+
+/* --- Screen Display Only --- */
+@media screen {
+  body {
+    padding: 15px;
+    background-color: #f3f4f6;
+  }
+
+  .resume-container {
+    background-color: white;
+    padding: 28px;
+    margin: 0 auto;
+    max-width: 8.5in;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-height: 11in;
+  }
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+  .resume-container {
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .full-name {
+    font-size: 18pt;
+  }
+
+  .section-title {
+    font-size: 9.5pt;
+  }
+
+  .item-title {
+    font-size: 9pt;
+  }
+
+  .item-header {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .item-date {
+    white-space: normal;
+    margin-top: 2px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .separator {
+    display: none;
+  }
+}

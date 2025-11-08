@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Resume</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- PERSONAL INFORMATION SECTION -->
+    <div class="personal-info">
+      <h1 class="full-name">{{name}}</h1>
+
+      {{#if email}}
+      <div class="contact-line">
+        {{#if phone}}<span class="contact-item">{{phone}}</span>{{/if}}
+        {{#if email}}<span class="contact-divider">•</span><a href="mailto:{{email}}" class="contact-item">{{email}}</a>{{/if}}
+        {{#if location}}<span class="contact-divider">•</span><span class="contact-item">{{location}}</span>{{/if}}
+        {{#if linkedin_display}}<span class="contact-divider">•</span><a href="{{linkedin}}" class="contact-item">{{linkedin_display}}</a>{{/if}}
+        {{#if website_display}}<span class="contact-divider">•</span><a href="{{website}}" class="contact-item">{{website_display}}</a>{{/if}}
+      </div>
+      {{/if}}
+    </div>
+
+    <!-- SECTIONS -->
+    {{#each sections}}
+    <div class="resume-section">
+      <h2 class="section-title">{{this.title}}</h2>
+
+      {{#each this.items}}
+      <div class="section-item">
+        <!-- Main Title and Date -->
+        <div class="item-header">
+          <div>
+            {{#if this.primary}}
+            {{#if this.link}}
+            <a href="{{this.link}}" target="_blank" class="item-title-link"><p class="item-title">{{this.primary}}</p></a>
+            {{else}}
+            <p class="item-title">{{this.primary}}</p>
+            {{/if}}
+            {{/if}}
+            {{#if this.secondary}}
+            <p class="item-subtitle">{{this.secondary}}</p>
+            {{/if}}
+          </div>
+          {{#if this.date}}
+          <p class="item-date">{{this.date}}</p>
+          {{/if}}
+        </div>
+
+        <!-- Tertiary (Role/Position) -->
+        {{#if this.tertiary}}
+        <p class="item-position">{{this.tertiary}}</p>
+        {{/if}}
+
+        <!-- Description Points -->
+        {{#if this.descriptionPoints}}
+        <ul class="item-description">
+          {{#each this.descriptionPoints}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+
+        <!-- Technologies (for Projects) -->
+        {{#if this.technologies}}
+        <p class="item-meta"><strong>Tech:</strong> {{this.technologies}}</p>
+        {{/if}}
+
+        <!-- Credential Info (for Certifications) -->
+        {{#if this.credentialId}}
+        <p class="item-meta"><strong>ID:</strong> {{this.credentialId}}</p>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</body>
+
+</html>

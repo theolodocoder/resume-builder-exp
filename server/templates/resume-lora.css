@@ -1,0 +1,352 @@
+/* Lora Modern Resume Template - MODERN SERIF WITH ACCENT COLOR */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* --- Reset & Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Main Container --- */
+.resume-container {
+  font-family: 'Lora', Georgia, serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 11pt;
+}
+
+/* --- Personal Information Section --- */
+.personal-info {
+  text-align: center;
+  margin-bottom: 18px;
+  padding: 0;
+  border-bottom: 1.5px solid #2c3e50;
+  padding-bottom: 14px;
+}
+
+.name-block {
+  margin-bottom: 10px;
+}
+
+.full-name {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 26pt;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+  color: #2c3e50;
+}
+
+.contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  font-size: 10.5pt;
+  color: #333333;
+}
+
+.contact-item {
+  display: inline-block;
+  font-size: 10.5pt;
+  color: #333333;
+}
+
+.contact-divider {
+  margin: 0 6px;
+  color: #666666;
+  font-weight: 400;
+}
+
+.email-link {
+  color: #2c3e50;
+  text-decoration: underline;
+  text-decoration-thickness: 0.75px;
+  text-underline-offset: 2px;
+}
+
+.email-link:visited {
+  color: #2c3e50;
+}
+
+/* --- Resume Sections --- */
+.resume-section {
+  margin-bottom: 15px;
+  page-break-inside: avoid;
+}
+
+.section-header {
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid #2c3e50;
+}
+
+.section-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 12pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  color: #2c3e50;
+}
+
+/* --- Section Items --- */
+.section-item {
+  margin-bottom: 11px;
+  padding-bottom: 8px;
+  page-break-inside: avoid;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 3px;
+}
+
+.item-left {
+  flex: 1;
+}
+
+.item-right {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.item-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0 0 2px 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+.item-title-link {
+  color: #2c3e50;
+  text-decoration: underline;
+  text-decoration-thickness: 0.75px;
+  text-underline-offset: 2px;
+}
+
+.item-subtitle {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: #555555;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+.item-date {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 10.5pt;
+  font-weight: 600;
+  color: #2c3e50;
+  white-space: nowrap;
+}
+
+.item-meta {
+  margin-bottom: 5px;
+}
+
+.item-position {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 10.5pt;
+  font-weight: 600;
+  font-style: italic;
+  color: #444444;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+/* --- Description Lists --- */
+.item-description {
+  font-family: 'Lora', Georgia, serif;
+  list-style-type: disc;
+  list-style-position: outside;
+  margin: 6px 0 0 0;
+  padding: 0 0 0 20px;
+}
+
+.item-description li {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 10.5pt;
+  font-weight: 400;
+  color: #333333;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  padding-left: 0;
+  display: list-item;
+}
+
+/* --- Technologies and Links --- */
+.item-technologies {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 9.5pt;
+  color: #555555;
+  margin: 4px 0 0 0;
+  padding: 0;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.item-link {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 9.5pt;
+  color: #333333;
+  margin: 2px 0 0 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+.item-link a {
+  color: #2c3e50;
+  text-decoration: underline;
+  text-decoration-thickness: 0.75px;
+  text-underline-offset: 2px;
+}
+
+.item-credential {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 9.5pt;
+  color: #555555;
+  margin: 2px 0 0 0;
+  padding: 0;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* --- Special Section Styles --- */
+.section-summary .item-description,
+.section-summary li {
+  list-style: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+}
+
+.section-skills .item-description {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  list-style: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+}
+
+.section-skills li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 10.5pt;
+}
+
+/* --- Print Styles --- */
+@page {
+  size: A4;
+  margin: 0.5in 0.6in;
+}
+
+@media print {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html,
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    background-color: white;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  .section-item {
+    page-break-inside: avoid;
+  }
+
+  .section-header {
+    page-break-after: avoid;
+  }
+
+  a {
+    color: #2c3e50;
+    text-decoration: underline;
+  }
+
+  .email-link {
+    color: #2c3e50;
+  }
+}
+
+/* --- Screen Display Only --- */
+@media screen {
+  body {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+
+  .resume-container {
+    background-color: white;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 8.5in;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 11in;
+  }
+}
+
+/* --- Responsive Typography --- */
+@media screen and (max-width: 768px) {
+  .resume-container {
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .full-name {
+    font-size: 20pt;
+  }
+
+  .section-title {
+    font-size: 11pt;
+  }
+
+  .item-title {
+    font-size: 10.5pt;
+  }
+
+  .item-description li {
+    font-size: 10pt;
+  }
+}

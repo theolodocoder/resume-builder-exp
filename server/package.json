@@ -1,0 +1,34 @@
+{
+  "name": "resume-builder-server",
+  "version": "1.0.0",
+  "description": "Express.js server for AI Resume Builder - generates professional resumes in PDF and DOCX formats with multiple template support",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "resume",
+    "generator",
+    "pdf",
+    "docx",
+    "puppeteer",
+    "express",
+    "templates"
+  ],
+  "author": "Resume Builder Team",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "docx": "^9.5.1",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.2",
+    "handlebars": "^4.7.8",
+    "puppeteer": "^24.29.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

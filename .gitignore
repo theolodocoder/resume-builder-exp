@@ -1,0 +1,9 @@
+.claude
+
+client-ignore
+node_modules
+
+# Build output
+dist
+server-ignore
+node_modules

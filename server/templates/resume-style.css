@@ -1,0 +1,219 @@
+/*
+ * Professional Resume CSS for PDF Generation
+ * Crisp, compact design with excellent typography
+ */
+
+/* --- Font Definitions --- */
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400;
+  src: url("{{{templatesBaseUrl}}}/fonts/Lora-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 700;
+  src: url("{{{templatesBaseUrl}}}/fonts/Lora-Bold.ttf") format("truetype");
+}
+
+/* --- Base Setup --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.resume-container {
+  font-family: "Lora", "Georgia", serif;
+  color: #1a1a1a;
+  line-height: 1.4;
+  background: #fff;
+  padding: 0;
+  width: 100%;
+  font-size: 10.5pt;
+}
+
+/* --- Header Section (Name & Contact) --- */
+.resume-header {
+  text-align: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.resume-header .name {
+  font-size: 20pt;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resume-header .contact-info {
+  font-size: 9pt;
+  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  align-items: center;
+}
+
+.resume-header .contact-info span {
+  display: inline;
+}
+
+.resume-header .contact-info a {
+  color: #333;
+  text-decoration: none;
+}
+
+.resume-header .contact-info span:not(:last-child)::after {
+  content: " • ";
+  margin: 0 6px;
+  color: #666;
+}
+
+/* --- Main Horizontal Rule --- */
+.resume-hr {
+  border: none;
+  border-top: 1.5pt solid #000;
+  margin: 8px 0 10px 0;
+  padding: 0;
+  height: 0;
+}
+
+/* --- Section Styling --- */
+.section {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+}
+
+.section-title {
+  font-size: 11pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0 0 6px 0;
+  padding: 0 0 4px 0;
+  border-bottom: 1pt solid #000;
+  page-break-after: avoid;
+  color: #1a1a1a;
+}
+
+/* --- Item Styling (Entries) --- */
+.item {
+  margin-bottom: 8px;
+  page-break-inside: avoid;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 1px;
+  gap: 8px;
+}
+
+.item-subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
+  gap: 8px;
+  font-size: 9.5pt;
+}
+
+.item-primary {
+  font-size: 10.5pt;
+  font-weight: 700;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.item-secondary {
+  font-size: 9.5pt;
+  font-weight: 400;
+  color: #444;
+  text-align: right;
+}
+
+.item-tertiary {
+  font-size: 9.5pt;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0;
+  color: #555;
+}
+
+.item-date {
+  font-size: 9.5pt;
+  font-weight: 400;
+  color: #555;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* --- Description Lists --- */
+.item-description {
+  list-style-type: disc;
+  padding-left: 16px;
+  margin: 3px 0 0 0;
+}
+
+.item-description li {
+  margin-bottom: 2px;
+  color: #333;
+  font-size: 9.5pt;
+  line-height: 1.3;
+}
+
+/* --- Special Sections --- */
+.section.skills .item-tertiary {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.section.summary .item-tertiary {
+  font-style: normal;
+  line-height: 1.35;
+  color: #333;
+}
+
+/* --- Print-Specific Overrides --- */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  @page {
+    size: A4;
+    margin: 0.5in 0.6in;
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+
+  .item {
+    page-break-inside: avoid;
+  }
+
+  .section-title {
+    page-break-after: avoid;
+  }
+}

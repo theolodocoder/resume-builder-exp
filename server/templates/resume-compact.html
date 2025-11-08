@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{contact.fullName}} - Resume</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- HEADER SECTION -->
+    <div class="header-section">
+      <div class="name-title">
+        <h1 class="full-name">{{contact.fullName}}</h1>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info">
+        {{#if contact.email}}<span class="contact-item">{{contact.email}}</span>{{/if}}
+        {{#if contact.phone}}<span class="separator">|</span><span class="contact-item">{{contact.phone}}</span>{{/if}}
+        {{#if contact.location}}<span class="separator">|</span><span class="contact-item">{{contact.location}}</span>{{/if}}
+        {{#if contact.linkedin}}<span class="separator">|</span><span class="contact-item"><a href="{{contact.linkedin}}">LinkedIn</a></span>{{/if}}
+      </div>
+    </div>
+
+    <!-- SECTIONS -->
+    {{#each sections}}
+    <div class="resume-section">
+      <div class="section-wrapper">
+        <div class="timeline-marker">
+          <div class="circle"></div>
+          {{#unless @last}}<div class="vertical-line"></div>{{/unless}}
+        </div>
+        <div class="section-content">
+          <h2 class="section-title">{{this.title}}</h2>
+
+          {{#each this.items}}
+          <div class="section-item">
+            <div class="item-header">
+              {{#if this.primary}}
+                {{#if this.link}}
+                  <a href="{{this.link}}" target="_blank" class="item-title-link"><span class="item-title">{{this.primary}}</span></a>
+                {{else}}
+                  <span class="item-title">{{this.primary}}</span>
+                {{/if}}
+              {{/if}}
+              {{#if this.secondary}}<span class="item-company">{{this.secondary}}</span>{{/if}}
+            </div>
+
+            {{#if this.date}}<div class="item-date">{{this.date}}</div>{{/if}}
+            {{#if this.tertiary}}<div class="item-position">{{this.tertiary}}</div>{{/if}}
+
+            {{#if this.descriptionPoints}}
+            <ul class="item-description">
+              {{#each this.descriptionPoints}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+
+            {{#if this.technologies}}<div class="item-meta">Tech: {{this.technologies}}</div>{{/if}}
+            {{#if this.credentialId}}<div class="item-meta">Credential ID: {{this.credentialId}}</div>{{/if}}
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+    <!-- SKILLS (Special grid layout) -->
+    {{#if skills}}
+    <div class="resume-section">
+      <div class="section-wrapper">
+        <div class="timeline-marker">
+          <div class="circle"></div>
+        </div>
+        <div class="section-content">
+          <h2 class="section-title">SKILLS</h2>
+          <div class="skills-grid">
+            {{#each skills}}
+            <span class="skill-item">{{this}}</span>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</body>
+
+</html>

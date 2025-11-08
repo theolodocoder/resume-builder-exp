@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- PERSONAL INFORMATION SECTION -->
+    <div class="personal-info">
+      <div class="name-block">
+        <h1 class="full-name">{{name}}</h1>
+      </div>
+
+      {{#if email}}
+      <div class="contact-line">
+        {{#if phone}}<span class="contact-item">{{phone}}</span>{{/if}}
+        {{#if email}}<span class="contact-divider">•</span><a href="mailto:{{email}}" class="contact-item email-link">{{email}}</a>{{/if}}
+        {{#if location}}<span class="contact-divider">•</span><span class="contact-item">{{location}}</span>{{/if}}
+        {{#if linkedin_display}}<span class="contact-divider">•</span><a href="{{linkedin}}" class="contact-item email-link">{{linkedin_display}}</a>{{/if}}
+        {{#if website_display}}<span class="contact-divider">•</span><a href="{{website}}" class="contact-item email-link">{{website_display}}</a>{{/if}}
+      </div>
+      {{/if}}
+    </div>
+
+    <!-- SECTIONS -->
+    {{#each sections}}
+    <div class="resume-section section-{{this.type}}">
+      <div class="section-header">
+        <h2 class="section-title">{{this.title}}</h2>
+      </div>
+
+      {{#each this.items}}
+      <div class="section-item">
+        <!-- Main Title and Right Content -->
+        <div class="item-row">
+          <div class="item-left">
+            {{#if this.primary}}
+            {{#if this.link}}
+            <a href="{{this.link}}" target="_blank" class="item-title-link"><h3 class="item-title">{{this.primary}}</h3></a>
+            {{else}}
+            <h3 class="item-title">{{this.primary}}</h3>
+            {{/if}}
+            {{/if}}
+
+            {{#if this.secondary}}
+            <p class="item-subtitle">{{this.secondary}}</p>
+            {{/if}}
+          </div>
+
+          {{#if this.date}}
+          <div class="item-right">
+            <span class="item-date">{{this.date}}</span>
+          </div>
+          {{/if}}
+        </div>
+
+        <!-- Tertiary (Role/Position) -->
+        {{#if this.tertiary}}
+        <div class="item-meta">
+          <p class="item-position">{{this.tertiary}}</p>
+        </div>
+        {{/if}}
+
+        <!-- Description Points -->
+        {{#if this.descriptionPoints}}
+        <ul class="item-description">
+          {{#each this.descriptionPoints}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+
+        <!-- Technologies (for Projects) -->
+        {{#if this.technologies}}
+        <p class="item-technologies"><strong>Tech:</strong> {{this.technologies}}</p>
+        {{/if}}
+
+        <!-- Credential Info (for Certifications) -->
+        {{#if this.credentialId}}
+        <p class="item-credential"><strong>ID:</strong> {{this.credentialId}}</p>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</body>
+
+</html>

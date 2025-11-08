@@ -1,0 +1,166 @@
+{
+  "contact": {
+    "fullName": "Promise Okafor",
+    "email": "promise.okafor@email.com",
+    "phone": "+234 (802) 555-6710",
+    "location": "Lagos, Nigeria",
+    "linkedin": "linkedin.com/in/promiseokafor",
+    "website": "promiseokafor.dev",
+    "github": "github.com/promiseokafor"
+  },
+  "summary": "Creative and detail-oriented Frontend Engineer with 6+ years of experience crafting performant, accessible, and scalable web applications. Expert in React, TypeScript, and TailwindCSS with a strong focus on design systems, user experience, and collaboration across cross-functional teams. Passionate about building human-centered interfaces and mentoring upcoming developers to write clean, maintainable code.",
+  "experience": [
+    {
+      "id": "1",
+      "company": "Lightforth",
+      "position": "Senior Frontend Engineer",
+      "location": "Remote",
+      "startDate": "Jan 2023",
+      "endDate": "Present",
+      "description": "Leading frontend development for Lightforth’s AI-powered job platform that helps users build ATS-friendly resumes, apply for jobs, and receive live interview coaching.\n• Architected and implemented a modular design system using TailwindCSS, CVA, and Headless UI.\n• Migrated monolithic frontend to a Turborepo monorepo, improving build times by 45%.\n• Integrated React Query for state synchronization and data caching, enhancing API performance.\n• Mentored junior engineers on best practices in accessibility, performance, and component design."
+    },
+    {
+      "id": "2",
+      "company": "SoftCrest Technologies",
+      "position": "Frontend Developer",
+      "location": "Lagos, Nigeria",
+      "startDate": "Apr 2020",
+      "endDate": "Dec 2022",
+      "description": "Developed and maintained responsive SaaS dashboards for enterprise clients.\n• Implemented reusable UI components in React and Storybook, reducing code duplication by 30%.\n• Collaborated with UX designers to enhance user onboarding flows, increasing activation rates by 22%.\n• Optimized rendering performance with React.memo and dynamic imports for faster load times."
+    },
+    {
+      "id": "3",
+      "company": "Freelance / Contract",
+      "position": "Frontend Developer",
+      "location": "Remote",
+      "startDate": "Jan 2018",
+      "endDate": "Mar 2020",
+      "description": "Delivered frontend solutions for startups and agencies using React and Next.js.\n• Built SEO-optimized landing pages and dashboards with responsive layouts.\n• Integrated REST and GraphQL APIs into client projects.\n• Worked directly with clients to translate business needs into efficient, maintainable UI code."
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "school": "University of Ibadan",
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "graduationDate": "Dec 2019"
+    },
+    {
+      "id": "2",
+      "school": "Frontend Masters",
+      "degree": "Professional Certificate",
+      "field": "Advanced React Patterns & Performance Optimization",
+      "graduationDate": "May 2021"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Lightforth Design System",
+      "description": "Built a scalable, reusable component library and design system using React, TailwindCSS, and Storybook. Integrated accessibility (a11y) standards, variant management via CVA, and token-based theming for consistent UI experiences across multiple Lightforth applications.",
+      "technologies": "React, TypeScript, TailwindCSS, Storybook, CVA, Turborepo",
+      "link": "https://lightforth.ai",
+      "startDate": "Feb 2023",
+      "endDate": "Jun 2023"
+    },
+    {
+      "id": "2",
+      "name": "JobBoard Pro",
+      "description": "Developed a full-featured job board interface allowing users to filter, apply, and track job postings in real time. Implemented virtualized lists, lazy loading, and instant search for smooth UX even with large datasets.",
+      "technologies": "Next.js, Zustand, React Query, TailwindCSS",
+      "link": "https://github.com/promiseokafor/jobboard-pro",
+      "startDate": "Aug 2022",
+      "endDate": "Nov 2022"
+    },
+    {
+      "id": "3",
+      "name": "Resume Builder",
+      "description": "Created an AI-assisted resume builder with drag-and-drop templates, real-time previews, and automatic formatting for ATS compliance. Integrated OpenAI API for personalized suggestions and bullet point optimization.",
+      "technologies": "React, TypeScript, Vite, OpenAI API, Zustand",
+      "link": "https://resume.lightforth.ai",
+      "startDate": "Apr 2023",
+      "endDate": "Present"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "1",
+      "name": "Certified React Developer",
+      "issuer": "Meta",
+      "issueDate": "Jul 2023",
+      "credentialId": "META-CRD-84722",
+      "credentialUrl": "https://www.meta.com/certifications"
+    },
+    {
+      "id": "2",
+      "name": "Frontend Web Development Nanodegree",
+      "issuer": "Udacity",
+      "issueDate": "Nov 2022",
+      "credentialId": "UDA-FWD-23109",
+      "credentialUrl": "https://www.udacity.com"
+    },
+    {
+      "id": "3",
+      "name": "Google UX Design Certificate",
+      "issuer": "Google",
+      "issueDate": "Jan 2021",
+      "credentialId": "GUXD-10991",
+      "credentialUrl": "https://grow.google"
+    }
+  ],
+  "skills": [
+    "React.js",
+    "TypeScript",
+    "Next.js",
+    "TailwindCSS",
+    "Redux Toolkit",
+    "Zustand",
+    "React Query",
+    "Vite",
+    "Accessibility (a11y)",
+    "Performance Optimization",
+    "Component Design",
+    "Storybook",
+    "Monorepo Architecture",
+    "REST & GraphQL APIs",
+    "CI/CD",
+    "Agile/Scrum",
+    "Figma Collaboration",
+    "Unit Testing (Jest, React Testing Library)",
+    "Git & Version Control"
+  ],
+  "awards": [
+    {
+      "id": "1",
+      "title": "Best Frontend Engineer of the Year",
+      "issuer": "Lightforth Engineering Team",
+      "date": "Dec 2023",
+      "description": "Recognized for outstanding contributions to frontend architecture and design system development."
+    },
+    {
+      "id": "2",
+      "title": "Top Contributor – Open Source Initiative",
+      "issuer": "React Community Nigeria",
+      "date": "Jul 2022",
+      "description": "Contributed to open-source projects improving accessibility and documentation in React UI libraries."
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "proficiency": "Fluent"
+    },
+    {
+      "name": "Yoruba",
+      "proficiency": "Conversational"
+    }
+  ],
+  "interests": [
+    "UI/UX Design",
+    "Open Source Development",
+    "AI in Frontend",
+    "Teaching & Mentorship",
+    "Product Design"
+  ]
+}
