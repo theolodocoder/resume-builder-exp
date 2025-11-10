@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Resume</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- COLORED ACCENT SIDEBAR -->
+    <div class="accent-bar"></div>
+
+    <!-- NAME AND BRIEF -->
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="full-name">{{name}}</h1>
+        {{#each sections}}
+        {{#if (eq this.type "summary")}}
+        {{#each this.items}}
+        {{#if this.tertiary}}
+        <p class="hero-tagline">{{this.tertiary}}</p>
+        {{/if}}
+        {{/each}}
+        {{/if}}
+        {{/each}}
+      </div>
+
+      <div class="hero-contact">
+        {{#if email}}
+        <a href="mailto:{{email}}" class="contact-chip">{{email}}</a>
+        {{/if}}
+        {{#if phone}}
+        <span class="contact-chip">{{phone}}</span>
+        {{/if}}
+        {{#if location}}
+        <span class="contact-chip">{{location}}</span>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT GRID -->
+    <div class="content-grid">
+      <!-- LEFT COLUMN -->
+      <div class="grid-left">
+        <!-- SKILLS SECTION -->
+        {{#each sections}}
+        {{#if (eq this.type "skills")}}
+        <div class="card-section">
+          <h2 class="section-title">{{this.title}}</h2>
+          <div class="skills-grid">
+            {{#each this.items}}
+            {{#if this.descriptionPoints}}
+            {{#each this.descriptionPoints}}
+            <div class="skill-item">{{this}}</div>
+            {{/each}}
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="grid-right">
+        <!-- EXPERIENCE, EDUCATION, PROJECTS, ETC -->
+        {{#each sections}}
+        {{#unless (eq this.type "summary")}}
+        {{#unless (eq this.type "skills")}}
+        <div class="card-section">
+          <h2 class="section-title">{{this.title}}</h2>
+
+          {{#each this.items}}
+          <div class="item-card">
+            <div class="item-header-creative">
+              {{#if this.primary}}
+              {{#if this.link}}
+              <a href="{{this.link}}" target="_blank" class="item-title-link">{{this.primary}}</a>
+              {{else}}
+              <h3 class="item-title-creative">{{this.primary}}</h3>
+              {{/if}}
+              {{/if}}
+              {{#if this.date}}
+              <span class="item-date-creative">{{this.date}}</span>
+              {{/if}}
+            </div>
+
+            {{#if this.secondary}}
+            <p class="item-subtitle-creative">{{this.secondary}}</p>
+            {{/if}}
+
+            {{#if this.tertiary}}
+            <p class="item-position-creative">{{this.tertiary}}</p>
+            {{/if}}
+
+            {{#if this.descriptionPoints}}
+            <ul class="item-description-creative">
+              {{#each this.descriptionPoints}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+
+            {{#if this.technologies}}
+            <p class="item-tag"><strong>Tech:</strong> {{this.technologies}}</p>
+            {{/if}}
+
+            {{#if this.credentialId}}
+            <p class="item-tag"><strong>ID:</strong> {{this.credentialId}}</p>
+            {{/if}}
+          </div>
+          {{/each}}
+        </div>
+        {{/unless}}
+        {{/unless}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

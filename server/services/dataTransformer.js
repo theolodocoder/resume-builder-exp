@@ -66,7 +66,7 @@ function transformResumeData(clientData) {
       items: projects.map((project) => ({
         primary: project.name || "",
         secondary: "",
-        tertiary: project.description || "",
+        tertiary: "",
         date: formatDateRange(project.startDate, project.endDate),
         technologies: project.technologies || "",
         link: project.link || "",
@@ -98,10 +98,11 @@ function transformResumeData(clientData) {
       type: "skills",
       items: [
         {
-          primary: "Technical Skills",
+          primary: "",
           secondary: "",
-          tertiary: skills.join(" • "),
+          tertiary: "",
           date: "",
+          descriptionPoints: skills,
         },
       ],
     });

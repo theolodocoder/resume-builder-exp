@@ -9,7 +9,7 @@
  */
 
 const express = require("express");
-const { generatePdf } = require("../services/pdfGenerator");
+const { generatePdf, generatePreviewHtml } = require("../services/pdfGenerator");
 const { generateDocx } = require("../services/docxGenerator");
 const router = express.Router();
 
@@ -124,6 +124,57 @@ router.post("/docx", async (req, res) => {
     res.status(500).json({
       error: "DOCX_GENERATION_FAILED",
       message: "Failed to generate DOCX resume",
+      details: error.message,
+    });
+  }
+});
+
+// ============================================================================
+// TEMPLATE PREVIEW ENDPOINT
+// ============================================================================
+
+/**
+ * POST /api/generate/preview
+ *
+ * Generate a template preview as HTML
+ *
+ * Query Parameters:
+ * - template (optional): Template ID to use (default: "professional")
+ *   Available: professional, lora, garamond, calibri, compact
+ *
+ * Request Body: Resume data object (same structure as PDF endpoint)
+ *
+ * Response: HTML string with fully compiled template
+ * Headers: Content-Type: text/html
+ */
+router.post("/preview", async (req, res) => {
+  try {
+    const data = req.body;
+    const templateId = req.query.template || "professional";
+
+    // Validate request body
+    if (!data || Object.keys(data).length === 0) {
+      return res.status(400).json({
+        error: "INVALID_REQUEST",
+        message: "No resume data provided in request body",
+      });
+    }
+
+    console.log(`Generating preview for template: ${templateId}`);
+
+    // Generate preview HTML with template selection
+    const previewHtml = await generatePreviewHtml(data, templateId);
+
+    // Set response headers for HTML
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+
+    // Send the HTML
+    res.send(previewHtml);
+  } catch (error) {
+    console.error("Preview generation error:", error.message);
+    res.status(500).json({
+      error: "PREVIEW_GENERATION_FAILED",
+      message: "Failed to generate preview",
       details: error.message,
     });
   }

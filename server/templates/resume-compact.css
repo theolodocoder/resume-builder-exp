@@ -264,7 +264,7 @@ html, body {
 /* --- Print Styles --- */
 @page {
   size: A4;
-  margin: 0.5in 0.6in;
+  margin: 0.4in 0.6in 0.5in 0.6in;
 }
 
 @media print {

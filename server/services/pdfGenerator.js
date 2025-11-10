@@ -246,4 +246,44 @@ const generatePdf = async (data, templateId = "professional", maxRetries = 2) =>
   throw lastError;
 };
 
-module.exports = { generatePdf };
+// ============================================================================
+// PREVIEW HTML GENERATION FUNCTION
+// ============================================================================
+
+/**
+ * Generate preview HTML for a template
+ * Same rendering pipeline as PDF but returns HTML instead of PDF
+ *
+ * @param {Object} data - Resume data object
+ * @param {string} templateId - Template to use (default: "professional")
+ * @returns {Promise<string>} Compiled HTML string with styles injected
+ */
+const generatePreviewHtml = async (data, templateId = "professional") => {
+  try {
+    // 1. Load template (HTML and CSS)
+    const { html: templateHtml, css: templateCss } = await loadTemplate(templateId);
+
+    // 2. Register any Handlebars helpers
+    handlebars.registerHelper("eq", (a, b) => a === b);
+
+    // 3. Compile the HTML template
+    const template = handlebars.compile(templateHtml);
+
+    // 4. Transform client data to template format
+    const transformedData = transformResumeData(data);
+
+    // 5. Render the final HTML, injecting data, styles, AND the base URL
+    const finalHtml = template({
+      ...transformedData,
+      styles: templateCss,
+      templatesBaseUrl: TEMPLATES_BASE_URL,
+    });
+
+    return finalHtml;
+  } catch (error) {
+    console.error("Preview HTML generation error:", error.message);
+    throw new Error(`Failed to generate preview: ${error.message}`);
+  }
+};
+
+module.exports = { generatePdf, generatePreviewHtml };
