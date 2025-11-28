@@ -7,6 +7,7 @@ import { ImportDialog } from "./ImportDialog";
 import { ExportDialog } from "./ExportDialog";
 import { ResumeUploadDialog } from "./ResumeUploadDialog";
 import { TourGuide } from "./TourGuide";
+import { TemplatesDrawer } from "./TemplatesDrawer";
 import { Monitor, FileText, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
@@ -407,37 +408,20 @@ export const ResumeBuilder = () => {
       </header>
 
       {/* Main Content */}
-      <div className="flex-1 container mx-auto px-4 py-6">
-        <div className="grid md:grid-cols-[60%_40%] gap-6 h-full">
-          {/* Editor Panel - Desktop Always Visible, Mobile Shows When Selected */}
-          <div
-            className={mobileView === "preview" ? "hidden md:block" : "md:block"}
-          >
-            <div className="tour-template-gallery">
-              <TemplateGallery
-                selectedTemplate={selectedTemplate}
-                onSelectTemplate={setSelectedTemplate}
-              />
-            </div>
-            <div className="tour-editor-form">
-              <EditorForm resumeData={resumeData} onChange={handleDataChange} />
-            </div>
-          </div>
-
-          {/* Preview Panel - Desktop Always Visible, Mobile Shows When Selected */}
-          <div
-            className={mobileView === "editor" ? "hidden md:block" : "md:block"}
-          >
-            <div className="sticky top-24 h-[calc(100vh-150px)] tour-template-preview">
-              <TemplatePreviewSidePanel
-                templateId={selectedTemplate}
-                templateName={getTemplateName(selectedTemplate)}
-                resumeData={resumeData}
-                embedded={true}
-              />
-            </div>
-          </div>
+      <div className="flex-1 container mx-auto px-4 py-6 overflow-auto">
+        <div className="tour-editor-form">
+          <EditorForm resumeData={resumeData} onChange={handleDataChange} />
         </div>
+      </div>
+
+      {/* Templates Drawer - Hidden by default, opens with button */}
+      <div className="tour-template-gallery tour-template-preview tour-open-templates-drawer">
+        <TemplatesDrawer
+          selectedTemplate={selectedTemplate}
+          onSelectTemplate={setSelectedTemplate}
+          resumeData={resumeData}
+          getTemplateName={getTemplateName}
+        />
       </div>
 
       {/* Mobile Action Buttons */}

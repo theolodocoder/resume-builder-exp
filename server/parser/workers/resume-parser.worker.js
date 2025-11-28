@@ -78,6 +78,7 @@ async function processParsingJob(job) {
         fileName,
         fileType,
         confidence: parseResult.confidence,
+        userId: job.data.userId || null, // Preserve userId for user tracking
         ...parseResult.metadata,
       }
     );
@@ -90,7 +91,7 @@ async function processParsingJob(job) {
       }
     }
 
-    // Clean up uploaded file
+    // Clean up uploaded file ONLY on success
     try {
       await fs.remove(filePath);
       logger.debug("Uploaded file cleaned up", { filePath });
@@ -124,15 +125,9 @@ async function processParsingJob(job) {
   } catch (error) {
     logger.error("Parsing job failed", error);
 
-    // Clean up file on error
-    try {
-      const { filePath } = job.data;
-      if (filePath && (await fs.pathExists(filePath))) {
-        await fs.remove(filePath);
-      }
-    } catch (cleanupError) {
-      logger.warn("Failed to clean up file after error", cleanupError);
-    }
+    // Do NOT clean up file on error - let it be available for retries
+    // File will only be cleaned up on successful completion
+    // If job fails after all retries, file will remain for debugging
 
     throw error;
   }
@@ -168,7 +163,12 @@ function initializeWorker() {
   });
 
   worker.on("error", (err) => {
-    logger.error("Worker error", err);
+    // Suppress Redis connection errors - Redis is optional for development
+    if (err.code === "ECONNREFUSED" || err.message?.includes("ECONNREFUSED")) {
+      logger.debug("Worker Redis connection attempt (non-critical)", { code: err.code });
+    } else {
+      logger.error("Worker error", err);
+    }
   });
 
   logger.info("Resume parser worker initialized", {

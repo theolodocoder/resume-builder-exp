@@ -1,0 +1,5 @@
+Flask==3.0.0
+spacy==3.7.2
+# Download models with: python -m spacy download en_core_web_trf
+# Or fallback: python -m spacy download en_core_web_sm
+Werkzeug==3.0.1

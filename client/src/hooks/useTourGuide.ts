@@ -8,7 +8,7 @@ export interface UseTourGuideOptions {
 }
 
 export const useTourGuide = (options: UseTourGuideOptions = {}) => {
-  const { autoStartFirstTime = false } = options;
+  const { autoStartFirstTime = true } = options;
 
   const [isOpen, setIsOpen] = useState(false);
   const [run, setRun] = useState(false);
@@ -30,7 +30,7 @@ export const useTourGuide = (options: UseTourGuideOptions = {}) => {
       const timer = setTimeout(() => {
         setRun(true);
         setIsOpen(true);
-      }, 500); // Delay to let page fully render
+      }, 1000); // Delay to let page fully render
 
       return () => clearTimeout(timer);
     }
