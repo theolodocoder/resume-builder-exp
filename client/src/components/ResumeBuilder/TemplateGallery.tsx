@@ -13,7 +13,18 @@ export type TemplateType =
   | "premiumDark"
   | "premiumCreative"
   | "premiumMinimal"
-  | "premiumExecutive";
+  | "premiumExecutive"
+  | "premiumTechLead"
+  | "premiumDesignPro"
+  | "premiumCorporateElite"
+  | "premiumStartupFounder"
+  | "premiumMarketingPro"
+  | "singleMinimalist"
+  | "singleModernBold"
+  | "singleSophisticated"
+  | "singleCreativeColor"
+  | "singleTechMinimal"
+  | "singleExecutive";
 
 interface Template {
   id: TemplateType;
@@ -115,6 +126,105 @@ const templates: Template[] = [
     font: "Lora",
     atsScore: 9.4,
     icon: "💼",
+  },
+  {
+    id: "premiumTechLead",
+    name: "Premium Tech Lead",
+    description: "Three-column metrics-focused design for senior engineers and CTOs.",
+    category: "Premium",
+    font: "Roboto",
+    atsScore: 9.3,
+    icon: "💻",
+  },
+  {
+    id: "premiumDesignPro",
+    name: "Premium Design Pro",
+    description: "Portfolio-style layout with accent stripe for designers and creatives.",
+    category: "Premium",
+    font: "Poppins",
+    atsScore: 9.0,
+    icon: "🎨",
+  },
+  {
+    id: "premiumCorporateElite",
+    name: "Premium Corporate Elite",
+    description: "Sophisticated executive layout with gold accents for C-level professionals.",
+    category: "Premium",
+    font: "Lora",
+    atsScore: 9.5,
+    icon: "👑",
+  },
+  {
+    id: "premiumStartupFounder",
+    name: "Premium Startup Founder",
+    description: "Modern asymmetric layout emphasizing impact and metrics for entrepreneurs.",
+    category: "Premium",
+    font: "Nunito",
+    atsScore: 9.2,
+    icon: "🚀",
+  },
+  {
+    id: "premiumMarketingPro",
+    name: "Premium Marketing Manager",
+    description: "Dynamic layout with vibrant accents for marketing and growth professionals.",
+    category: "Premium",
+    font: "Montserrat",
+    atsScore: 9.1,
+    icon: "📊",
+  },
+  {
+    id: "singleMinimalist",
+    name: "Single Column Minimalist",
+    description: "Ultra-clean single-column design with maximum white space. Timeless elegance.",
+    category: "Premium Single",
+    font: "Lora",
+    atsScore: 9.6,
+    icon: "⚪",
+  },
+  {
+    id: "singleModernBold",
+    name: "Single Column Modern Bold",
+    description: "Contemporary single-column with bold typography and vibrant accent colors.",
+    category: "Premium Single",
+    font: "Playfair Display",
+    atsScore: 9.4,
+    icon: "🎯",
+  },
+  {
+    id: "singleSophisticated",
+    name: "Single Column Sophisticated",
+    description: "Elegant serif-based design with refined spacing. Traditional meets modern.",
+    category: "Premium Single",
+    font: "Merriweather",
+    atsScore: 9.5,
+    icon: "✨",
+  },
+  {
+    id: "singleCreativeColor",
+    name: "Single Column Creative Color",
+    description: "Vibrant color-coded sections for creative professionals and designers.",
+    category: "Premium Single",
+    font: "Poppins",
+    atsScore: 9.2,
+    icon: "🎨",
+  },
+  {
+    id: "singleTechMinimal",
+    name: "Single Column Tech Minimal",
+    description: "Clean monospace-friendly design for developers. Modern tech aesthetic.",
+    category: "Premium Single",
+    font: "Fira Code",
+    atsScore: 9.5,
+    icon: "💻",
+  },
+  {
+    id: "singleExecutive",
+    name: "Single Column Executive",
+    description: "Luxury design for high-level executives. Sophisticated and prestige-focused.",
+    category: "Premium Single",
+    font: "Lora",
+    atsScore: 9.6,
+    icon: "👑",
   },
 ];
 

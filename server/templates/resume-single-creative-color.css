@@ -1,0 +1,309 @@
+/*
+ * Single Column Creative Color Resume Template CSS
+ * Vibrant color-coded sections for creative professionals
+ * Modern, colorful, and visually engaging design
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #2d3748;
+  background-color: #ffffff;
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 10pt;
+}
+
+/* ===== HERO HEADER ===== */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 40px 32px;
+}
+
+.hero-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36pt;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.8px;
+  line-height: 1.1;
+}
+
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  font-size: 9.5pt;
+  opacity: 0.95;
+}
+
+.hero-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.hero-link:hover {
+  opacity: 0.8;
+}
+
+.hero-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-dot {
+  margin: 0 6px;
+  opacity: 0.6;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.section {
+  page-break-inside: avoid;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-icon {
+  display: inline-block;
+  padding: 0 12px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 10pt;
+  letter-spacing: 0.5px;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Section Color Coding */
+.section-summary .section-icon {
+  background-color: #667eea;
+}
+
+.section-experience .section-icon {
+  background-color: #f093fb;
+}
+
+.section-education .section-icon {
+  background-color: #4facfe;
+}
+
+.section-skills .section-icon {
+  background-color: #43e97b;
+}
+
+.section-projects .section-icon {
+  background-color: #fa709a;
+}
+
+.section-certs .section-icon {
+  background-color: #ffa502;
+}
+
+.section-title {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.section-text {
+  font-size: 10pt;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* ===== ITEMS ===== */
+.item {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f5f5f5;
+  page-break-inside: avoid;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+.item-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+
+.item-title-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #667eea;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  margin: 0;
+}
+
+.item-title-link:hover {
+  color: #5568d3;
+  text-decoration: underline;
+}
+
+.item-date {
+  font-size: 9pt;
+  color: #a0aec0;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.item-date-text {
+  font-size: 9pt;
+  color: #a0aec0;
+  margin: 0 0 6px 0;
+  font-weight: 500;
+}
+
+.item-company {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #667eea;
+  margin: 2px 0 6px 0;
+}
+
+.item-description {
+  font-size: 10pt;
+  color: #4a5568;
+  margin: 4px 0 0 0;
+  line-height: 1.6;
+}
+
+.item-list {
+  list-style: disc;
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+.item-list li {
+  font-size: 10pt;
+  color: #4a5568;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+/* ===== SKILLS ===== */
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-bubble {
+  display: inline-block;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 16px;
+  font-size: 9pt;
+  font-weight: 600;
+}
+
+/* ===== PRINT STYLES ===== */
+@page {
+  size: A4;
+  margin: 0.3in 0 0.5in 0;
+}
+
+@media print {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html, body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+}
+
+@media screen {
+  body {
+    padding: 20px;
+    background-color: #f7fafc;
+  }
+
+  .resume-container {
+    box-shadow: 0 8px 28px rgba(102, 126, 234, 0.15);
+    min-height: 11in;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 32px 20px;
+  }
+
+  .hero-name {
+    font-size: 28pt;
+  }
+
+  .content {
+    padding: 28px 20px;
+    gap: 18px;
+  }
+
+  .item-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .item-date {
+    margin-top: 4px;
+  }
+}

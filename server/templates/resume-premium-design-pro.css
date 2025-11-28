@@ -1,0 +1,433 @@
+/*
+ * Premium Design Pro Resume Template CSS
+ * Portfolio-style layout for creative professionals
+ * Clean, elegant, visually-focused design
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Mono:wght@400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-container {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  line-height: 1.6;
+  font-size: 10pt;
+  position: relative;
+}
+
+/* ===== ACCENT STRIPE ===== */
+.accent-stripe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #ec4899 0%, #f59e0b 50%, #ec4899 100%);
+}
+
+/* ===== PROFILE SECTION (LEFT) ===== */
+.profile-section {
+  width: 28%;
+  padding: 40px 28px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f3f4f6 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.name {
+  font-size: 28pt;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.8px;
+  line-height: 1.1;
+}
+
+.tagline {
+  font-size: 11pt;
+  color: #ec4899;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contact Information */
+.contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-link {
+  font-size: 9.5pt;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: #ec4899;
+}
+
+.contact-item {
+  font-size: 9.5pt;
+  color: #6b7280;
+}
+
+/* Social Links */
+.social-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  font-size: 9pt;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ec4899;
+  padding: 6px 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.social-link:hover {
+  background-color: #be185d;
+}
+
+/* ===== MAIN SECTION ===== */
+.main-section {
+  flex: 1;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Section Styling */
+.section {
+  margin-bottom: 8px;
+  page-break-inside: avoid;
+}
+
+.section-heading {
+  font-size: 12pt;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.section-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #ec4899 0%, transparent 100%);
+  margin-bottom: 14px;
+}
+
+/* Summary Text */
+.summary-text {
+  font-size: 10pt;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 0;
+}
+
+/* ===== EXPERIENCE CARDS ===== */
+.experience-card {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  page-break-inside: avoid;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.card-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.card-meta {
+  font-size: 9pt;
+  color: #9ca3af;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.card-company {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #ec4899;
+  margin: 2px 0 6px 0;
+}
+
+.card-details {
+  list-style: disc;
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+.card-details li {
+  font-size: 10pt;
+  color: #374151;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+/* ===== PROJECT SHOWCASE ===== */
+.project-showcase {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-left: 3px solid #ec4899;
+  page-break-inside: avoid;
+  transition: background-color 0.2s;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+
+.project-name {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.project-link:hover .project-name {
+  color: #ec4899;
+}
+
+.external-icon {
+  font-size: 10pt;
+  color: #ec4899;
+}
+
+.project-date {
+  font-size: 8.5pt;
+  color: #9ca3af;
+  font-weight: 500;
+  margin: 0;
+}
+
+.project-description {
+  font-size: 9.5pt;
+  color: #4b5563;
+  margin: 2px 0 0 0;
+  line-height: 1.5;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.tech-tag {
+  display: inline-block;
+  background-color: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 8pt;
+  font-weight: 500;
+  border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+/* ===== EDUCATION CARDS ===== */
+.education-card {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+
+.edu-degree {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.edu-date {
+  font-size: 9pt;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+.edu-school {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #ec4899;
+  margin: 2px 0 0 0;
+}
+
+.edu-field {
+  font-size: 9pt;
+  color: #6b7280;
+  margin: 2px 0 0 0;
+}
+
+/* ===== SKILLS SHOWCASE ===== */
+.skills-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skill-tag {
+  display: inline-block;
+  background-color: #f0f0f0;
+  color: #111827;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 9pt;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+}
+
+/* ===== CERTIFICATION CARDS ===== */
+.cert-card {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+}
+
+.cert-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 2px 0;
+}
+
+.cert-issuer {
+  font-size: 9pt;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ===== PRINT STYLES ===== */
+@page {
+  size: A4;
+  margin: 0.3in 0 0.5in 0;
+}
+
+@media print {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html, body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .profile-section {
+    background: white;
+    border-color: #d1d5db;
+  }
+
+  a {
+    color: #ec4899;
+  }
+}
+
+@media screen {
+  body {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+
+  .resume-container {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 8.5in;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    min-height: 11in;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .resume-container {
+    flex-direction: column;
+  }
+
+  .profile-section {
+    width: 100%;
+    border-right: none;
+    border-bottom: 3px solid #ec4899;
+    padding: 30px 20px;
+  }
+
+  .main-section {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .name {
+    font-size: 24pt;
+  }
+
+  .card-header,
+  .edu-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .card-meta,
+  .edu-date {
+    margin-top: 4px;
+  }
+}

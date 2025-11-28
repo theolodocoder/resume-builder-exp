@@ -24,7 +24,7 @@ const router = express.Router();
  *
  * Query Parameters:
  * - template (optional): Template ID to use (default: "professional")
- *   Available: professional, lora, garamond, calibri, compact
+ *   Available: professional, lora, garamond, calibri, compact, premiumModern, premiumDark, premiumCreative, premiumMinimal, premiumExecutive
  *
  * Request Body: Resume data object
  * {
@@ -61,9 +61,13 @@ router.post("/pdf", async (req, res) => {
     // Generate PDF with template selection and retry logic
     const pdfBuffer = await generatePdf(data, templateId);
 
+    // Use user's name in filename if available
+    const fullName = data.contact?.fullName || "Resume";
+    const filename = `${fullName}_Resume.pdf`;
+
     // Set response headers for PDF download
     res.setHeader("Content-Type", "application/pdf");
-    res.setHeader("Content-Disposition", 'attachment; filename="resume.pdf"');
+    res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
     res.setHeader("Content-Length", pdfBuffer.length);
 
     // Send the PDF buffer
@@ -109,12 +113,16 @@ router.post("/docx", async (req, res) => {
     // Generate DOCX document
     const docxBuffer = await generateDocx(data);
 
+    // Use user's name in filename if available
+    const fullName = data.contact?.fullName || "Resume";
+    const filename = `${fullName}_Resume.docx`;
+
     // Set response headers for DOCX download
     res.setHeader(
       "Content-Type",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     );
-    res.setHeader('Content-Disposition', 'attachment; filename="resume.docx"');
+    res.setHeader("Content-Disposition", `attachment; filename="${filename}"`);
     res.setHeader("Content-Length", docxBuffer.length);
 
     // Send the DOCX buffer
@@ -140,7 +148,7 @@ router.post("/docx", async (req, res) => {
  *
  * Query Parameters:
  * - template (optional): Template ID to use (default: "professional")
- *   Available: professional, lora, garamond, calibri, compact
+ *   Available: professional, lora, garamond, calibri, compact, premiumModern, premiumDark, premiumCreative, premiumMinimal, premiumExecutive
  *
  * Request Body: Resume data object (same structure as PDF endpoint)
  *

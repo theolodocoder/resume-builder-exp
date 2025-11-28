@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Executive Resume</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- PRESTIGE HEADER -->
+    <header class="prestige-header">
+      <div class="prestige-badge"></div>
+      <h1 class="exec-name">{{name}}</h1>
+
+      <!-- CONTACT INFORMATION -->
+      <nav class="exec-contact">
+        {{#if email}}
+        <a href="mailto:{{email}}" class="exec-link">{{email}}</a>
+        {{/if}}
+        {{#if phone}}
+        <span class="exec-divider">·</span>
+        <span class="exec-text">{{phone}}</span>
+        {{/if}}
+        {{#if location}}
+        <span class="exec-divider">·</span>
+        <span class="exec-text">{{location}}</span>
+        {{/if}}
+        {{#if linkedin_display}}
+        <span class="exec-divider">·</span>
+        <a href="{{linkedin}}" target="_blank" class="exec-link">LinkedIn</a>
+        {{/if}}
+        {{#if website_display}}
+        <span class="exec-divider">·</span>
+        <a href="{{website}}" target="_blank" class="exec-link">Website</a>
+        {{/if}}
+      </nav>
+    </header>
+
+    <!-- EXECUTIVE SUMMARY -->
+    {{#each sections}}
+    {{#if (eq this.type "summary")}}
+    <section class="exec-summary-section">
+      <h2 class="exec-section-title">Executive Profile</h2>
+      {{#each this.items}}
+      {{#if this.tertiary}}
+      <p class="exec-summary-text">{{this.tertiary}}</p>
+      {{/if}}
+      {{/each}}
+    </section>
+    {{/if}}
+    {{/each}}
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    {{#each sections}}
+    {{#if (eq this.type "experience")}}
+    <section class="exec-section">
+      <h2 class="exec-section-title">Professional Experience</h2>
+      {{#each this.items}}
+      <article class="exec-position">
+        <header class="exec-pos-header">
+          <h3 class="exec-pos-title">{{this.primary}}</h3>
+          <span class="exec-pos-dates">{{this.date}}</span>
+        </header>
+        <p class="exec-pos-company">{{this.secondary}} {{#if this.tertiary}}– {{this.tertiary}}{{/if}}</p>
+        {{#if this.descriptionPoints}}
+        <ul class="exec-pos-achievements">
+          {{#each this.descriptionPoints}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </article>
+      {{/each}}
+    </section>
+    {{/if}}
+    {{/each}}
+
+    <!-- EDUCATION -->
+    {{#each sections}}
+    {{#if (eq this.type "education")}}
+    <section class="exec-section">
+      <h2 class="exec-section-title">Education</h2>
+      {{#each this.items}}
+      <article class="exec-education">
+        <header class="exec-edu-header">
+          <h3 class="exec-edu-degree">{{this.primary}}</h3>
+          <span class="exec-edu-date">{{this.date}}</span>
+        </header>
+        <p class="exec-edu-institution">{{this.secondary}} {{#if this.tertiary}}• {{this.tertiary}}{{/if}}</p>
+      </article>
+      {{/each}}
+    </section>
+    {{/if}}
+    {{/each}}
+
+    <!-- BOARD MEMBERSHIPS & LEADERSHIP ROLES -->
+    {{#each sections}}
+    {{#if (eq this.type "certifications")}}
+    <section class="exec-section">
+      <h2 class="exec-section-title">Board & Leadership</h2>
+      {{#each this.items}}
+      <article class="exec-leadership">
+        <h3 class="exec-leadership-title">{{this.primary}}</h3>
+        <p class="exec-leadership-org">{{this.secondary}} {{#if this.date}}• {{this.date}}{{/if}}</p>
+      </article>
+      {{/each}}
+    </section>
+    {{/if}}
+    {{/each}}
+
+    <!-- CORE COMPETENCIES / EXPERTISE -->
+    {{#each sections}}
+    {{#if (eq this.type "skills")}}
+    <section class="exec-section">
+      <h2 class="exec-section-title">Core Competencies</h2>
+      <div class="exec-skills-container">
+        {{#each this.items}}
+        {{#if this.descriptionPoints}}
+        {{#each this.descriptionPoints}}
+        <span class="exec-skill-badge">{{this}}</span>
+        {{/each}}
+        {{/if}}
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+    {{/each}}
+
+    <!-- NOTABLE ACHIEVEMENTS / PROJECTS -->
+    {{#each sections}}
+    {{#if (eq this.type "projects")}}
+    <section class="exec-section">
+      <h2 class="exec-section-title">Notable Achievements</h2>
+      {{#each this.items}}
+      <article class="exec-achievement">
+        {{#if this.link}}
+        <a href="{{this.link}}" target="_blank" class="exec-achievement-link">{{this.primary}}</a>
+        {{else}}
+        <h3 class="exec-achievement-title">{{this.primary}}</h3>
+        {{/if}}
+        {{#if this.date}}
+        <p class="exec-achievement-year">{{this.date}}</p>
+        {{/if}}
+        {{#if this.tertiary}}
+        <p class="exec-achievement-desc">{{this.tertiary}}</p>
+        {{/if}}
+      </article>
+      {{/each}}
+    </section>
+    {{/if}}
+    {{/each}}
+  </div>
+</body>
+
+</html>

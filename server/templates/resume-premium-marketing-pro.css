@@ -1,0 +1,414 @@
+/*
+ * Premium Marketing Manager Resume Template CSS
+ * Dynamic layout for marketing and growth professionals
+ * Achievement-focused, vibrant, professional design
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-container {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  font-size: 10pt;
+}
+
+/* ===== ACCENT BAR ===== */
+.accent-bar {
+  height: 5px;
+  background: linear-gradient(90deg, #f97316 0%, #f43f5e 50%, #ec4899 100%);
+}
+
+/* ===== HEADER SECTION ===== */
+.header-section {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: #ffffff;
+  padding: 40px 32px;
+  border-bottom: 1px solid #374151;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32pt;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.1;
+}
+
+.header-role {
+  font-size: 11pt;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #f97316;
+}
+
+/* ===== CONTENT GRID ===== */
+.content-grid {
+  display: grid;
+  grid-template-columns: 22% 1fr;
+  gap: 0;
+  flex: 1;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebar-module {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.module-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #f97316;
+}
+
+.module-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.module-link,
+.module-text {
+  font-size: 9.5pt;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+  word-break: break-word;
+}
+
+.module-link:hover {
+  color: #f97316;
+}
+
+/* Skills Cloud */
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.skill-item {
+  display: inline-block;
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 8.5pt;
+  font-weight: 600;
+  border: 1px solid #fcd34d;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  padding: 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-block {
+  margin-bottom: 8px;
+  page-break-inside: avoid;
+}
+
+.block-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #f97316;
+}
+
+/* ===== SUMMARY ===== */
+.summary-paragraph {
+  font-size: 10pt;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* ===== EXPERIENCE ITEMS ===== */
+.exp-item {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  page-break-inside: avoid;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 3px;
+}
+
+.exp-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.exp-date {
+  font-size: 9pt;
+  color: #9ca3af;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.exp-company {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #f97316;
+  margin: 2px 0 6px 0;
+}
+
+.exp-achievements {
+  list-style: disc;
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+.exp-achievements li {
+  font-size: 10pt;
+  color: #374151;
+  margin-bottom: 3px;
+  line-height: 1.4;
+}
+
+/* ===== CAMPAIGN ITEMS ===== */
+.campaign-item {
+  margin-bottom: 14px;
+  padding: 12px;
+  background: #fffbeb;
+  border-left: 3px solid #f97316;
+  page-break-inside: avoid;
+  border-radius: 2px;
+}
+
+.campaign-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.campaign-name {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.campaign-name:hover {
+  color: #f97316;
+}
+
+.campaign-year {
+  font-size: 9pt;
+  color: #9ca3af;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.campaign-desc {
+  font-size: 9.5pt;
+  color: #374151;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== EDUCATION ===== */
+.edu-item {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+}
+
+.edu-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 2px 0;
+}
+
+.edu-institution {
+  font-size: 9.5pt;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ===== AWARDS ===== */
+.award-item {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+}
+
+.award-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 2px 0;
+}
+
+.award-issuer {
+  font-size: 9pt;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ===== PRINT STYLES ===== */
+@page {
+  size: A4;
+  margin: 0.3in 0 0.5in 0;
+}
+
+@media print {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html, body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar {
+    background: white;
+    border-color: #d1d5db;
+  }
+
+  .campaign-item {
+    background: white;
+  }
+
+  a {
+    color: #f97316;
+  }
+}
+
+@media screen {
+  body {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+
+  .resume-container {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 8.5in;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14);
+    min-height: 11in;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 24px 32px;
+  }
+
+  .main-content {
+    padding: 24px 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-section {
+    padding: 30px 20px;
+  }
+
+  .header-name {
+    font-size: 28pt;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border: none;
+    border-bottom: 2px solid #f97316;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .exp-header,
+  .campaign-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .exp-date,
+  .campaign-year {
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Technical Resume</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="topbar-content">
+        <h1 class="developer-name">{{name}}</h1>
+        <div class="status">Developer / Engineer</div>
+      </div>
+    </div>
+
+    <!-- CONTACT BAR -->
+    <div class="contact-bar">
+      {{#if email}}
+      <a href="mailto:{{email}}" class="contact-chip">{{email}}</a>
+      {{/if}}
+      {{#if phone}}
+      <div class="contact-chip">{{phone}}</div>
+      {{/if}}
+      {{#if location}}
+      <div class="contact-chip">📍 {{location}}</div>
+      {{/if}}
+      {{#if linkedin_display}}
+      <a href="{{linkedin}}" target="_blank" class="contact-chip">github.com/</a>
+      {{/if}}
+      {{#if website_display}}
+      <a href="{{website}}" target="_blank" class="contact-chip">Portfolio</a>
+      {{/if}}
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-area">
+      <!-- ABOUT / SUMMARY -->
+      {{#each sections}}
+      {{#if (eq this.type "summary")}}
+      <section class="block-section">
+        <h2 class="block-header">ABOUT</h2>
+        {{#each this.items}}
+        {{#if this.tertiary}}
+        <p class="block-text">{{this.tertiary}}</p>
+        {{/if}}
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- EXPERIENCE -->
+      {{#each sections}}
+      {{#if (eq this.type "experience")}}
+      <section class="block-section">
+        <h2 class="block-header">EXPERIENCE</h2>
+        {{#each this.items}}
+        <div class="position-block">
+          <div class="pos-line">
+            <span class="pos-title">{{this.primary}}</span>
+            <span class="pos-period">{{this.date}}</span>
+          </div>
+          <div class="pos-org">{{this.secondary}} {{#if this.tertiary}}→ {{this.tertiary}}{{/if}}</div>
+          {{#if this.descriptionPoints}}
+          <ul class="pos-points">
+            {{#each this.descriptionPoints}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- EDUCATION -->
+      {{#each sections}}
+      {{#if (eq this.type "education")}}
+      <section class="block-section">
+        <h2 class="block-header">EDUCATION</h2>
+        {{#each this.items}}
+        <div class="edu-block">
+          <div class="edu-line">
+            <span class="edu-degree">{{this.primary}}</span>
+            <span class="edu-year">{{this.date}}</span>
+          </div>
+          <div class="edu-school">{{this.secondary}} {{#if this.tertiary}}• {{this.tertiary}}{{/if}}</div>
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- SKILLS / TECHNOLOGIES -->
+      {{#each sections}}
+      {{#if (eq this.type "skills")}}
+      <section class="block-section">
+        <h2 class="block-header">TECHNOLOGIES</h2>
+        <div class="tech-grid">
+          {{#each this.items}}
+          {{#if this.descriptionPoints}}
+          {{#each this.descriptionPoints}}
+          <code class="tech-tag">{{this}}</code>
+          {{/each}}
+          {{/if}}
+          {{/each}}
+        </div>
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- PROJECTS / PORTFOLIO -->
+      {{#each sections}}
+      {{#if (eq this.type "projects")}}
+      <section class="block-section">
+        <h2 class="block-header">PROJECTS</h2>
+        {{#each this.items}}
+        <div class="project-block">
+          {{#if this.link}}
+          <a href="{{this.link}}" target="_blank" class="project-link">{{this.primary}}</a>
+          {{else}}
+          <div class="project-name">{{this.primary}}</div>
+          {{/if}}
+          {{#if this.date}}
+          <span class="project-year">{{this.date}}</span>
+          {{/if}}
+          {{#if this.tertiary}}
+          <p class="project-desc">{{this.tertiary}}</p>
+          {{/if}}
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- CERTIFICATIONS -->
+      {{#each sections}}
+      {{#if (eq this.type "certifications")}}
+      <section class="block-section">
+        <h2 class="block-header">CERTIFICATIONS</h2>
+        {{#each this.items}}
+        <div class="cert-block">
+          <div class="cert-name">{{this.primary}}</div>
+          <div class="cert-meta">{{this.secondary}} {{#if this.date}}• {{this.date}}{{/if}}</div>
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</body>
+
+</html>

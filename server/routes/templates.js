@@ -87,7 +87,29 @@ router.get("/:templateId", async (req, res) => {
       return res.status(404).json({
         error: "TEMPLATE_NOT_FOUND",
         message: `Template not found: ${templateId}`,
-        availableTemplates: ["professional", "lora", "garamond", "calibri", "compact"],
+        availableTemplates: [
+          "professional",
+          "lora",
+          "garamond",
+          "calibri",
+          "compact",
+          "premiumModern",
+          "premiumDark",
+          "premiumCreative",
+          "premiumMinimal",
+          "premiumExecutive",
+          "premiumTechLead",
+          "premiumDesignPro",
+          "premiumCorporateElite",
+          "premiumStartupFounder",
+          "premiumMarketingPro",
+          "singleMinimalist",
+          "singleModernBold",
+          "singleSophisticated",
+          "singleCreativeColor",
+          "singleTechMinimal",
+          "singleExecutive",
+        ],
       });
     }
 

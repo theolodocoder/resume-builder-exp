@@ -1,0 +1,440 @@
+/*
+ * Premium Corporate Elite Resume Template CSS
+ * Sophisticated layout for C-level executives and directors
+ * Elegant, authoritative, premium design
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  font-size: 10pt;
+}
+
+/* ===== TOP BANNER ===== */
+.banner-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+  padding: 40px 32px;
+  border-bottom: 3px solid #b8860b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.banner-name {
+  font-family: 'Lora', serif;
+  font-size: 36pt;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.banner-title {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #b8860b;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.banner-accent {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #b8860b 0%, #daa520 100%);
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-layout {
+  display: flex;
+  flex: 1;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 25%;
+  background: linear-gradient(180deg, #f9fafb 0%, #f3f4f6 100%);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.sidebar-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-heading {
+  font-family: 'Lora', serif;
+  font-size: 10pt;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #b8860b;
+}
+
+/* Contact Items */
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-value {
+  font-size: 9.5pt;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+  word-break: break-word;
+}
+
+.contact-value:hover {
+  color: #b8860b;
+}
+
+/* Expertise Tags */
+.expertise-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.expertise-item {
+  font-size: 9pt;
+  color: #374151;
+  padding-left: 10px;
+  position: relative;
+}
+
+.expertise-item:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #b8860b;
+  font-weight: 700;
+}
+
+/* ===== CONTENT SECTION ===== */
+.content {
+  flex: 1;
+  padding: 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-section {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.section-title {
+  font-family: 'Lora', serif;
+  font-size: 12pt;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #b8860b;
+}
+
+/* ===== SUMMARY ===== */
+.summary-text {
+  font-size: 10pt;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* ===== EXECUTIVE POSITIONS ===== */
+.exec-position {
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+}
+
+.position-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 3px;
+}
+
+.position-title {
+  font-family: 'Lora', serif;
+  font-size: 11pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.position-dates {
+  font-size: 9pt;
+  color: #9ca3af;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.company-info {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #b8860b;
+  margin: 2px 0 6px 0;
+}
+
+.achievements {
+  list-style: disc;
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+.achievements li {
+  font-size: 10pt;
+  color: #374151;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* ===== EDUCATION ===== */
+.education-entry {
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+}
+
+.edu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 3px;
+}
+
+.degree {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.grad-year {
+  font-size: 9pt;
+  color: #9ca3af;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.institution {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #b8860b;
+  margin: 2px 0 0 0;
+}
+
+.field {
+  font-size: 9pt;
+  color: #6b7280;
+  margin: 2px 0 0 0;
+}
+
+/* ===== LEADERSHIP ROLES ===== */
+.leadership-item {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.leadership-title {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 3px 0;
+}
+
+.leadership-org {
+  font-size: 9pt;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ===== STRATEGIC INITIATIVES ===== */
+.initiative {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+}
+
+.initiative-title {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 2px 0;
+}
+
+.initiative-meta {
+  font-size: 9pt;
+  color: #b8860b;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.initiative-desc {
+  font-size: 10pt;
+  color: #374151;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== PRINT STYLES ===== */
+@page {
+  size: A4;
+  margin: 0.3in 0 0.5in 0;
+}
+
+@media print {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html, body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar {
+    background: white;
+    border-color: #d1d5db;
+  }
+
+  .banner-section {
+    background: white;
+    border-color: #d1d5db;
+  }
+
+  .banner-accent {
+    display: none;
+  }
+
+  a {
+    color: #b8860b;
+  }
+}
+
+@media screen {
+  body {
+    padding: 20px;
+    background-color: #fafafa;
+  }
+
+  .resume-container {
+    background-color: white;
+    margin: 0 auto;
+    max-width: 8.5in;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.14);
+    min-height: 11in;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 24px 32px;
+  }
+
+  .content {
+    padding: 24px 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner-section {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 20px;
+  }
+
+  .banner-name {
+    font-size: 28pt;
+  }
+
+  .banner-accent {
+    display: none;
+  }
+
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 2px solid #b8860b;
+  }
+
+  .content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .position-header,
+  .edu-top {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .position-dates,
+  .grad-year {
+    margin-top: 4px;
+  }
+}

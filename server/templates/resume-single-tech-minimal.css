@@ -1,0 +1,360 @@
+/*
+ * Single Column Tech Minimal Resume Template CSS
+ * Clean, monospace-friendly design for developers and engineers
+ * Modern tech aesthetic with minimal distractions
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-container {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #24292e;
+  background-color: #ffffff;
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 10pt;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+  background: linear-gradient(90deg, #1f6feb 0%, #388bfd 100%);
+  color: #ffffff;
+  padding: 32px 32px 24px;
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.developer-name {
+  font-family: 'Fira Code', monospace;
+  font-size: 32pt;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.status {
+  font-size: 10pt;
+  font-weight: 600;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== CONTACT BAR ===== */
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 32px;
+  background-color: #f6f8fa;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.contact-chip {
+  background-color: #ffffff;
+  color: #24292e;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 8.5pt;
+  border: 1px solid #e1e4e8;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.contact-chip:hover {
+  background-color: #1f6feb;
+  color: #ffffff;
+  border-color: #1f6feb;
+}
+
+/* ===== MAIN AREA ===== */
+.main-area {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.block-section {
+  page-break-inside: avoid;
+}
+
+.block-header {
+  font-family: 'Fira Code', monospace;
+  font-size: 10pt;
+  font-weight: 700;
+  color: #1f6feb;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.block-text {
+  font-size: 10pt;
+  line-height: 1.7;
+  color: #424242;
+}
+
+/* ===== POSITIONS ===== */
+.position-block {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  page-break-inside: avoid;
+}
+
+.pos-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+.pos-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #24292e;
+}
+
+.pos-period {
+  font-family: 'Fira Code', monospace;
+  font-size: 9pt;
+  color: #666;
+  white-space: nowrap;
+}
+
+.pos-org {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #1f6feb;
+  margin-bottom: 6px;
+}
+
+.pos-points {
+  list-style: disc;
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+.pos-points li {
+  font-size: 10pt;
+  color: #424242;
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+
+/* ===== EDUCATION ===== */
+.edu-block {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+}
+
+.edu-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+.edu-degree {
+  font-family: 'Fira Code', monospace;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #24292e;
+}
+
+.edu-year {
+  font-family: 'Fira Code', monospace;
+  font-size: 9pt;
+  color: #666;
+  white-space: nowrap;
+}
+
+.edu-school {
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: #1f6feb;
+}
+
+/* ===== TECHNOLOGIES ===== */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-tag {
+  display: inline-block;
+  background-color: #f6f8fa;
+  color: #24292e;
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-family: 'Fira Code', monospace;
+  font-size: 8.5pt;
+  font-weight: 500;
+  border: 1px solid #e1e4e8;
+}
+
+/* ===== PROJECTS ===== */
+.project-block {
+  margin-bottom: 11px;
+  page-break-inside: avoid;
+}
+
+.project-link {
+  font-family: 'Fira Code', monospace;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #1f6feb;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.project-link:hover {
+  color: #0969da;
+  text-decoration: underline;
+}
+
+.project-name {
+  font-family: 'Fira Code', monospace;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #24292e;
+  margin-bottom: 2px;
+}
+
+.project-year {
+  font-family: 'Fira Code', monospace;
+  font-size: 9pt;
+  color: #666;
+  margin-left: 8px;
+}
+
+.project-desc {
+  font-size: 10pt;
+  color: #424242;
+  margin: 4px 0 0 0;
+  line-height: 1.6;
+}
+
+/* ===== CERTIFICATIONS ===== */
+.cert-block {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+}
+
+.cert-name {
+  font-family: 'Fira Code', monospace;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: #24292e;
+  margin-bottom: 2px;
+}
+
+.cert-meta {
+  font-size: 9pt;
+  color: #666;
+}
+
+/* ===== PRINT STYLES ===== */
+@page {
+  size: A4;
+  margin: 0.3in 0 0.5in 0;
+}
+
+@media print {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  html, body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resume-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .topbar {
+    background: linear-gradient(90deg, #1f6feb 0%, #388bfd 100%);
+  }
+}
+
+@media screen {
+  body {
+    padding: 20px;
+    background-color: #f6f8fa;
+  }
+
+  .resume-container {
+    box-shadow: 0 6px 24px rgba(31, 111, 235, 0.12);
+    min-height: 11in;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topbar {
+    padding: 28px 20px 20px;
+  }
+
+  .topbar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .developer-name {
+    font-size: 26pt;
+  }
+
+  .contact-bar {
+    padding: 12px 20px;
+  }
+
+  .main-area {
+    padding: 28px 20px;
+    gap: 18px;
+  }
+
+  .pos-line,
+  .edu-line {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .pos-period,
+  .edu-year {
+    margin-top: 4px;
+  }
+}

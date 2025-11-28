@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Founder Resume</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+      <h1 class="hero-name">{{name}}</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-subtitle">Founder & Entrepreneur</p>
+    </div>
+
+    <div class="main-grid">
+      <!-- LEFT COLUMN: IMPACT & OVERVIEW -->
+      <div class="left-column">
+        <!-- PROFESSIONAL SUMMARY / VISION -->
+        {{#each sections}}
+        {{#if (eq this.type "summary")}}
+        <section class="card">
+          <h2 class="card-title">VISION</h2>
+          {{#each this.items}}
+          {{#if this.tertiary}}
+          <p class="card-text">{{this.tertiary}}</p>
+          {{/if}}
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- IMPACT METRICS -->
+        <section class="card metrics-card">
+          <h2 class="card-title">KEY IMPACT</h2>
+          <div class="metrics-list">
+            <div class="metric-item">
+              <span class="metric-icon">📈</span>
+              <span class="metric-text">10x Growth</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-icon">👥</span>
+              <span class="metric-text">50+ Team</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-icon">💰</span>
+              <span class="metric-text">$10M+ ARR</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- CORE COMPETENCIES -->
+        {{#each sections}}
+        {{#if (eq this.type "skills")}}
+        <section class="card">
+          <h2 class="card-title">CORE COMPETENCIES</h2>
+          <div class="competency-tags">
+            {{#each this.items}}
+            {{#if this.descriptionPoints}}
+            {{#each this.descriptionPoints}}
+            <span class="competency-tag">{{this}}</span>
+            {{/each}}
+            {{/if}}
+            {{/each}}
+          </div>
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- CONTACT -->
+        <section class="card contact-card">
+          <h2 class="card-title">CONNECT</h2>
+          <div class="contact-links">
+            {{#if email}}
+            <a href="mailto:{{email}}" class="contact-link">{{email}}</a>
+            {{/if}}
+            {{#if phone}}
+            <div class="contact-link-static">{{phone}}</div>
+            {{/if}}
+            {{#if location}}
+            <div class="contact-link-static">{{location}}</div>
+            {{/if}}
+            {{#if linkedin_display}}
+            <a href="{{linkedin}}" target="_blank" class="contact-link">LinkedIn</a>
+            {{/if}}
+            {{#if website_display}}
+            <a href="{{website}}" target="_blank" class="contact-link">Website</a>
+            {{/if}}
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN: EXPERIENCES & ACHIEVEMENTS -->
+      <div class="right-column">
+        <!-- VENTURES / COMPANIES -->
+        {{#each sections}}
+        {{#if (eq this.type "experience")}}
+        <section class="card">
+          <h2 class="card-title">VENTURES & LEADERSHIP</h2>
+          {{#each this.items}}
+          <div class="venture-card">
+            <div class="venture-header">
+              <h3 class="venture-title">{{this.primary}}</h3>
+              <span class="venture-year">{{this.date}}</span>
+            </div>
+            <p class="venture-company">{{this.secondary}} {{#if this.tertiary}}• {{this.tertiary}}{{/if}}</p>
+            {{#if this.descriptionPoints}}
+            <ul class="venture-achievements">
+              {{#each this.descriptionPoints}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- NOTABLE PROJECTS -->
+        {{#each sections}}
+        {{#if (eq this.type "projects")}}
+        <section class="card">
+          <h2 class="card-title">NOTABLE VENTURES</h2>
+          {{#each this.items}}
+          <div class="project-card">
+            {{#if this.link}}
+            <a href="{{this.link}}" target="_blank" class="project-link">
+              <h3 class="project-name">{{this.primary}} ↗</h3>
+            </a>
+            {{else}}
+            <h3 class="project-name">{{this.primary}}</h3>
+            {{/if}}
+            {{#if this.date}}
+            <p class="project-year">{{this.date}}</p>
+            {{/if}}
+            {{#if this.tertiary}}
+            <p class="project-desc">{{this.tertiary}}</p>
+            {{/if}}
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- EDUCATION -->
+        {{#each sections}}
+        {{#if (eq this.type "education")}}
+        <section class="card">
+          <h2 class="card-title">EDUCATION</h2>
+          {{#each this.items}}
+          <div class="education-simple">
+            <h3 class="edu-degree">{{this.primary}}</h3>
+            <p class="edu-school">{{this.secondary}} {{#if this.date}}• {{this.date}}{{/if}}</p>
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- CERTIFICATIONS / AWARDS -->
+        {{#each sections}}
+        {{#if (eq this.type "certifications")}}
+        <section class="card">
+          <h2 class="card-title">RECOGNITION</h2>
+          {{#each this.items}}
+          <div class="award">
+            <h3 class="award-name">{{this.primary}}</h3>
+            <p class="award-by">{{this.secondary}} {{#if this.date}}• {{this.date}}{{/if}}</p>
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Marketing Professional</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- TOP ACCENT BAR -->
+    <div class="accent-bar"></div>
+
+    <!-- HEADER SECTION -->
+    <div class="header-section">
+      <div class="header-content">
+        <h1 class="header-name">{{name}}</h1>
+        <p class="header-role">Marketing & Growth Professional</p>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT GRID -->
+    <div class="content-grid">
+      <!-- LEFT SIDEBAR -->
+      <div class="sidebar">
+        <!-- CONTACT INFO -->
+        <div class="sidebar-module">
+          <h3 class="module-title">CONTACT</h3>
+          <div class="module-content">
+            {{#if email}}
+            <a href="mailto:{{email}}" class="module-link">{{email}}</a>
+            {{/if}}
+            {{#if phone}}
+            <div class="module-text">{{phone}}</div>
+            {{/if}}
+            {{#if location}}
+            <div class="module-text">📍 {{location}}</div>
+            {{/if}}
+            {{#if linkedin_display}}
+            <a href="{{linkedin}}" target="_blank" class="module-link">🔗 LinkedIn</a>
+            {{/if}}
+            {{#if website_display}}
+            <a href="{{website}}" target="_blank" class="module-link">🌐 Website</a>
+            {{/if}}
+          </div>
+        </div>
+
+        <!-- CORE SKILLS -->
+        {{#each sections}}
+        {{#if (eq this.type "skills")}}
+        <div class="sidebar-module">
+          <h3 class="module-title">CORE SKILLS</h3>
+          <div class="skills-cloud">
+            {{#each this.items}}
+            {{#if this.descriptionPoints}}
+            {{#each this.descriptionPoints}}
+            <span class="skill-item">{{this}}</span>
+            {{/each}}
+            {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+        {{/each}}
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+        <!-- EXECUTIVE SUMMARY -->
+        {{#each sections}}
+        {{#if (eq this.type "summary")}}
+        <section class="content-block">
+          <h2 class="block-title">PROFESSIONAL SUMMARY</h2>
+          {{#each this.items}}
+          {{#if this.tertiary}}
+          <p class="summary-paragraph">{{this.tertiary}}</p>
+          {{/if}}
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- PROFESSIONAL EXPERIENCE WITH METRICS -->
+        {{#each sections}}
+        {{#if (eq this.type "experience")}}
+        <section class="content-block">
+          <h2 class="block-title">PROFESSIONAL EXPERIENCE</h2>
+          {{#each this.items}}
+          <div class="exp-item">
+            <div class="exp-header">
+              <h3 class="exp-title">{{this.primary}}</h3>
+              <span class="exp-date">{{this.date}}</span>
+            </div>
+            <p class="exp-company">{{this.secondary}} {{#if this.tertiary}}| {{this.tertiary}}{{/if}}</p>
+            {{#if this.descriptionPoints}}
+            <ul class="exp-achievements">
+              {{#each this.descriptionPoints}}
+              <li>{{this}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- CAMPAIGNS & PROJECTS -->
+        {{#each sections}}
+        {{#if (eq this.type "projects")}}
+        <section class="content-block">
+          <h2 class="block-title">SIGNATURE CAMPAIGNS</h2>
+          {{#each this.items}}
+          <div class="campaign-item">
+            <div class="campaign-header">
+              {{#if this.link}}
+              <a href="{{this.link}}" target="_blank" class="campaign-name">{{this.primary}} ↗</a>
+              {{else}}
+              <h3 class="campaign-name">{{this.primary}}</h3>
+              {{/if}}
+              {{#if this.date}}
+              <span class="campaign-year">{{this.date}}</span>
+              {{/if}}
+            </div>
+            {{#if this.tertiary}}
+            <p class="campaign-desc">{{this.tertiary}}</p>
+            {{/if}}
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- EDUCATION -->
+        {{#each sections}}
+        {{#if (eq this.type "education")}}
+        <section class="content-block">
+          <h2 class="block-title">EDUCATION</h2>
+          {{#each this.items}}
+          <div class="edu-item">
+            <h3 class="edu-title">{{this.primary}}</h3>
+            <p class="edu-institution">{{this.secondary}} {{#if this.date}}• {{this.date}}{{/if}}</p>
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+
+        <!-- CERTIFICATIONS & AWARDS -->
+        {{#each sections}}
+        {{#if (eq this.type "certifications")}}
+        <section class="content-block">
+          <h2 class="block-title">AWARDS & RECOGNITION</h2>
+          {{#each this.items}}
+          <div class="award-item">
+            <h3 class="award-title">{{this.primary}}</h3>
+            <p class="award-issuer">{{this.secondary}} {{#if this.date}}• {{this.date}}{{/if}}</p>
+          </div>
+          {{/each}}
+        </section>
+        {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

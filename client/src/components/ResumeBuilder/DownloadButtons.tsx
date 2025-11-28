@@ -4,11 +4,12 @@ import { Download, Loader2 } from "lucide-react";
 interface DownloadButtonsProps {
   isLoading: boolean;
   onDownload: (format: "pdf" | "docx") => void;
+  className?: string;
 }
 
-export const DownloadButtons = ({ isLoading, onDownload }: DownloadButtonsProps) => {
+export const DownloadButtons = ({ isLoading, onDownload, className = "" }: DownloadButtonsProps) => {
   return (
-    <div className="flex gap-3">
+    <div className={`flex gap-3 ${className}`}>
       <Button
         onClick={() => onDownload("pdf")}
         disabled={isLoading}

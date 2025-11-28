@@ -5,7 +5,9 @@ import { TemplateGallery, TemplateType } from "./TemplateGallery";
 import { TemplatePreviewSidePanel } from "./TemplatePreviewSidePanel";
 import { ImportDialog } from "./ImportDialog";
 import { ExportDialog } from "./ExportDialog";
-import { Monitor, FileText } from "lucide-react";
+import { ResumeUploadDialog } from "./ResumeUploadDialog";
+import { TourGuide } from "./TourGuide";
+import { Monitor, FileText, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { generatePdfApi, generateDocxApi } from "@/services/apiService";
@@ -178,6 +180,9 @@ export const ResumeBuilder = () => {
     useState<TemplateType>("professional");
   const [isLoading, setIsLoading] = useState(false);
   const [mobileView, setMobileView] = useState<MobileView>("editor");
+  const [uploadDialogOpen, setUploadDialogOpen] = useState(false);
+  const [isTourOpen, setIsTourOpen] = useState(false);
+  const [runTour, setRunTour] = useState(false);
   const { toast } = useToast();
 
   // Load saved data on mount
@@ -187,7 +192,21 @@ export const ResumeBuilder = () => {
       const savedTemplate = localStorage.getItem(TEMPLATE_KEY);
 
       if (savedData) {
-        setResumeData(JSON.parse(savedData));
+        const parsedData = JSON.parse(savedData);
+        // Validate that essential fields exist before using saved data
+        if (
+          parsedData &&
+          parsedData.contact &&
+          parsedData.contact.fullName &&
+          parsedData.contact.fullName.trim().length > 0
+        ) {
+          setResumeData(parsedData);
+          console.log("Loaded resume data from localStorage");
+        } else {
+          console.warn(
+            "Saved data missing required fields, using default data"
+          );
+        }
       }
       if (savedTemplate) {
         // Validate template is one of the valid options
@@ -202,13 +221,26 @@ export const ResumeBuilder = () => {
           "premiumCreative",
           "premiumMinimal",
           "premiumExecutive",
+          "premiumTechLead",
+          "premiumDesignPro",
+          "premiumCorporateElite",
+          "premiumStartupFounder",
+          "premiumMarketingPro",
+          "singleMinimalist",
+          "singleModernBold",
+          "singleSophisticated",
+          "singleCreativeColor",
+          "singleTechMinimal",
+          "singleExecutive",
         ];
         if (validTemplates.includes(savedTemplate as TemplateType)) {
           setSelectedTemplate(savedTemplate as TemplateType);
+          console.log("Loaded template from localStorage:", savedTemplate);
         }
       }
     } catch (error) {
       console.error("Failed to load saved data:", error);
+      // If localStorage is corrupted, just use defaults - don't override
     }
   }, []);
 
@@ -295,12 +327,30 @@ export const ResumeBuilder = () => {
       premiumCreative: "Premium Creative",
       premiumMinimal: "Premium Minimal",
       premiumExecutive: "Premium Executive",
+      premiumTechLead: "Premium Tech Lead",
+      premiumDesignPro: "Premium Design Pro",
+      premiumCorporateElite: "Premium Corporate Elite",
+      premiumStartupFounder: "Premium Startup Founder",
+      premiumMarketingPro: "Premium Marketing Manager",
+      singleMinimalist: "Single Column Minimalist",
+      singleModernBold: "Single Column Modern Bold",
+      singleSophisticated: "Single Column Sophisticated",
+      singleCreativeColor: "Single Column Creative Color",
+      singleTechMinimal: "Single Column Tech Minimal",
+      singleExecutive: "Single Column Executive",
     };
     return templateNames[templateId];
   };
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* Tour Guide */}
+      <TourGuide
+        isOpen={isTourOpen}
+        onClose={() => setIsTourOpen(false)}
+        run={runTour}
+      />
+
       {/* Header */}
       <header className="glass-panel border-b border-border/50 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -335,11 +385,22 @@ export const ResumeBuilder = () => {
 
           {/* Desktop Action Buttons */}
           <div className="hidden md:flex gap-2 items-center">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setUploadDialogOpen(true)}
+              title="Upload and parse an existing resume"
+              className="tour-import-upload"
+            >
+              <Upload className="h-4 w-4 mr-2" />
+              Upload Resume
+            </Button>
             <ImportDialog onImport={handleImport} />
             <ExportDialog resumeData={resumeData} />
             <DownloadButtons
               isLoading={isLoading}
               onDownload={handleDownload}
+              className="tour-download-buttons"
             />
           </div>
         </div>
@@ -348,22 +409,26 @@ export const ResumeBuilder = () => {
       {/* Main Content */}
       <div className="flex-1 container mx-auto px-4 py-6">
         <div className="grid md:grid-cols-[60%_40%] gap-6 h-full">
-          {/* Editor Panel - Desktop Always Visible, Mobile Conditional */}
+          {/* Editor Panel - Desktop Always Visible, Mobile Shows When Selected */}
           <div
-            className={`${mobileView === "preview" ? "hidden md:block" : ""}`}
+            className={mobileView === "preview" ? "hidden md:block" : "md:block"}
           >
-            <TemplateGallery
-              selectedTemplate={selectedTemplate}
-              onSelectTemplate={setSelectedTemplate}
-            />
-            <EditorForm resumeData={resumeData} onChange={handleDataChange} />
+            <div className="tour-template-gallery">
+              <TemplateGallery
+                selectedTemplate={selectedTemplate}
+                onSelectTemplate={setSelectedTemplate}
+              />
+            </div>
+            <div className="tour-editor-form">
+              <EditorForm resumeData={resumeData} onChange={handleDataChange} />
+            </div>
           </div>
 
-          {/* Preview Panel - Desktop Always Visible, Mobile Conditional */}
+          {/* Preview Panel - Desktop Always Visible, Mobile Shows When Selected */}
           <div
-            className={`${mobileView === "editor" ? "hidden md:block" : ""}`}
+            className={mobileView === "editor" ? "hidden md:block" : "md:block"}
           >
-            <div className="sticky top-24 h-[calc(100vh-150px)]">
+            <div className="sticky top-24 h-[calc(100vh-150px)] tour-template-preview">
               <TemplatePreviewSidePanel
                 templateId={selectedTemplate}
                 templateName={getTemplateName(selectedTemplate)}
@@ -377,12 +442,32 @@ export const ResumeBuilder = () => {
 
       {/* Mobile Action Buttons */}
       <div className="md:hidden glass-panel border-t border-border/50 sticky bottom-0 p-4 space-y-2">
-        <div className="flex gap-2">
+        <div className="flex gap-2 tour-import-upload">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex-1"
+            onClick={() => setUploadDialogOpen(true)}
+          >
+            <Upload className="h-4 w-4 mr-2" />
+            Upload
+          </Button>
           <ImportDialog onImport={handleImport} />
           <ExportDialog resumeData={resumeData} />
         </div>
-        <DownloadButtons isLoading={isLoading} onDownload={handleDownload} />
+        <DownloadButtons
+          isLoading={isLoading}
+          onDownload={handleDownload}
+          className="tour-download-buttons"
+        />
       </div>
+
+      {/* Resume Upload Dialog */}
+      <ResumeUploadDialog
+        open={uploadDialogOpen}
+        onOpenChange={setUploadDialogOpen}
+        onResumeLoaded={handleImport}
+      />
     </div>
   );
 };

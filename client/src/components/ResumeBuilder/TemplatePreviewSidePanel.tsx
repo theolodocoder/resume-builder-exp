@@ -26,19 +26,37 @@ export const TemplatePreviewSidePanel = ({
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if ((embedded || isOpen) && resumeData.contact.fullName) {
+    const shouldLoad = (embedded || isOpen) && resumeData.contact.fullName;
+    console.log("Preview effect triggered", {
+      embedded,
+      isOpen,
+      hasFullName: !!resumeData.contact.fullName,
+      templateId,
+      shouldLoad,
+    });
+
+    if (shouldLoad) {
+      console.log("Loading preview for template:", templateId);
       loadPreview();
     }
-  }, [isOpen, templateId, resumeData, embedded]);
+  }, [embedded, isOpen, templateId, resumeData.contact.fullName]);
 
   const loadPreview = async () => {
+    console.log("Starting preview load for template:", templateId);
     setLoading(true);
     setError(null);
     try {
+      console.log("Calling API with resumeData:", {
+        name: resumeData.contact.fullName,
+        templateId,
+      });
       const previewHtml = await getTemplatePreviewApi(resumeData, templateId as any);
+      console.log("Preview HTML received, length:", previewHtml.length);
       setHtml(previewHtml);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to load preview");
+      const errorMsg = err instanceof Error ? err.message : "Failed to load preview";
+      console.error("Preview load error:", errorMsg);
+      setError(errorMsg);
     } finally {
       setLoading(false);
     }

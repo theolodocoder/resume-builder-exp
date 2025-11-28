@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{name}} - Portfolio Resume</title>
+  <style>
+    {{{styles}}}
+  </style>
+</head>
+
+<body>
+  <div class="resume-container">
+    <!-- LEFT ACCENT STRIPE & PROFILE -->
+    <div class="accent-stripe"></div>
+
+    <div class="profile-section">
+      <h1 class="name">{{name}}</h1>
+      <p class="tagline">Creative Professional</p>
+
+      <!-- CONTACT INFORMATION -->
+      <div class="contact-group">
+        {{#if email}}
+        <a href="mailto:{{email}}" class="contact-link">{{email}}</a>
+        {{/if}}
+        {{#if phone}}
+        <span class="contact-item">{{phone}}</span>
+        {{/if}}
+        {{#if location}}
+        <span class="contact-item">{{location}}</span>
+        {{/if}}
+      </div>
+
+      <!-- SOCIAL LINKS -->
+      <div class="social-group">
+        {{#if linkedin_display}}
+        <a href="{{linkedin}}" target="_blank" class="social-link">LinkedIn</a>
+        {{/if}}
+        {{#if website_display}}
+        <a href="{{website}}" target="_blank" class="social-link">Portfolio</a>
+        {{/if}}
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-section">
+      <!-- PROFESSIONAL SUMMARY -->
+      {{#each sections}}
+      {{#if (eq this.type "summary")}}
+      <section class="section">
+        <h2 class="section-heading">ABOUT</h2>
+        <div class="section-divider"></div>
+        {{#each this.items}}
+        {{#if this.tertiary}}
+        <p class="summary-text">{{this.tertiary}}</p>
+        {{/if}}
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- EXPERIENCE / PROJECTS SHOWCASE -->
+      {{#each sections}}
+      {{#if (eq this.type "experience")}}
+      <section class="section">
+        <h2 class="section-heading">PROFESSIONAL EXPERIENCE</h2>
+        <div class="section-divider"></div>
+        {{#each this.items}}
+        <div class="experience-card">
+          <div class="card-header">
+            <h3 class="card-title">{{this.primary}}</h3>
+            <span class="card-meta">{{this.date}}</span>
+          </div>
+          <p class="card-company">{{this.secondary}} {{#if this.tertiary}}• {{this.tertiary}}{{/if}}</p>
+          {{#if this.descriptionPoints}}
+          <ul class="card-details">
+            {{#each this.descriptionPoints}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- PORTFOLIO PROJECTS -->
+      {{#each sections}}
+      {{#if (eq this.type "projects")}}
+      <section class="section">
+        <h2 class="section-heading">FEATURED PROJECTS</h2>
+        <div class="section-divider"></div>
+        {{#each this.items}}
+        <div class="project-showcase">
+          <div class="project-content">
+            {{#if this.link}}
+            <a href="{{this.link}}" target="_blank" class="project-link">
+              <h3 class="project-name">{{this.primary}}</h3>
+              <span class="external-icon">↗</span>
+            </a>
+            {{else}}
+            <h3 class="project-name">{{this.primary}}</h3>
+            {{/if}}
+            {{#if this.date}}
+            <p class="project-date">{{this.date}}</p>
+            {{/if}}
+            {{#if this.tertiary}}
+            <p class="project-description">{{this.tertiary}}</p>
+            {{/if}}
+            {{#if this.technologies}}
+            <div class="project-tech">
+              {{#split this.technologies ","}}
+              <span class="tech-tag">{{trim this}}</span>
+              {{/split}}
+            </div>
+            {{/if}}
+          </div>
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- EDUCATION -->
+      {{#each sections}}
+      {{#if (eq this.type "education")}}
+      <section class="section">
+        <h2 class="section-heading">EDUCATION</h2>
+        <div class="section-divider"></div>
+        {{#each this.items}}
+        <div class="education-card">
+          <div class="edu-header">
+            <h3 class="edu-degree">{{this.primary}}</h3>
+            <span class="edu-date">{{this.date}}</span>
+          </div>
+          <p class="edu-school">{{this.secondary}}</p>
+          {{#if this.tertiary}}
+          <p class="edu-field">{{this.tertiary}}</p>
+          {{/if}}
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- SKILLS / EXPERTISE -->
+      {{#each sections}}
+      {{#if (eq this.type "skills")}}
+      <section class="section">
+        <h2 class="section-heading">EXPERTISE</h2>
+        <div class="section-divider"></div>
+        <div class="skills-showcase">
+          {{#each this.items}}
+          {{#if this.descriptionPoints}}
+          {{#each this.descriptionPoints}}
+          <span class="skill-tag">{{this}}</span>
+          {{/each}}
+          {{/if}}
+          {{/each}}
+        </div>
+      </section>
+      {{/if}}
+      {{/each}}
+
+      <!-- CERTIFICATIONS -->
+      {{#each sections}}
+      {{#if (eq this.type "certifications")}}
+      <section class="section">
+        <h2 class="section-heading">AWARDS & CERTIFICATIONS</h2>
+        <div class="section-divider"></div>
+        {{#each this.items}}
+        <div class="cert-card">
+          <h3 class="cert-title">{{this.primary}}</h3>
+          <p class="cert-issuer">{{this.secondary}} {{#if this.date}}• {{this.date}}{{/if}}</p>
+        </div>
+        {{/each}}
+      </section>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</body>
+
+</html>
